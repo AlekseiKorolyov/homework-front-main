@@ -2,19 +2,19 @@ import { useState } from 'react';
 import { UserList2 } from './UserList2';
 
 export type AddressType = {
-  street: string;
-  city: string;
+  street: string
+  city: string
 };
 
 export type UserType = {
-  id: number;
-  name: string;
-  age: number;
-  address: any; // пропиши типизацию
+  id: number
+  name: string
+  age: number
+  address: AddressType // пропиши типизацию
 };
 
 export type UsersObjectType = {
-  myFriends: any; // пропиши типизацию
+  myFriends: UserType[] // пропиши типизацию
 };
 
 export const HW2 = () => {
@@ -46,14 +46,14 @@ export const HW2 = () => {
 
   let [currentUsers, setCurrentUsers] = useState<UsersObjectType>(users);
 
-  const filterUsers = () => {
-    const filteredUsers = 'НУЖНО ПРОФИЛЬТРОВАТЬ ДРУЗЕЙ. ОСТАВЛЯЕМ ТОЛЬКО ТЕХ, КОТОРЫЕ ЖИВУТ В ГОРОДЕ LOS ANGELES';
-    setCurrentUsers({ myFriends: filteredUsers });
-  };
+  // const filterUsers = () => {
+  //   const filteredUsers = 'НУЖНО ПРОФИЛЬТРОВАТЬ ДРУЗЕЙ. ОСТАВЛЯЕМ ТОЛЬКО ТЕХ, КОТОРЫЕ ЖИВУТ В ГОРОДЕ LOS ANGELES';
+  //   setCurrentUsers({ myFriends: filteredUsers });
+  // };
 
   return (
     <div id={'hw02'}>
-      <UserList2 users={currentUsers} filterUsers={filterUsers} />
+      {/*<UserList2 users={currentUsers} filterUsers={filterUsers} />*/}
     </div>
   );
 };
